@@ -10,7 +10,11 @@ import '@/styles/colors.css';
  */
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <div>
+      <Component {...pageProps} />;
+    </div>
+  );
 }
 
 export default MyApp;
