@@ -4,10 +4,10 @@ interface PostProp {
   post: Post;
 }
 
-const PostDetail = ({ post }: PostProp) => {
+const PostCard = ({ post }: PostProp) => {
   return (
     <>
-      <div className='w-100 m-8 flex h-full rounded-md p-4 shadow-xl'>
+      <div className='w-100 m-8 flex h-full rounded-md p-4 hover:shadow-xl '>
         <div className='flex items-center text-center'>
           <p className='text-4xl font-bold'>{post.id}</p>
         </div>
@@ -21,4 +21,4 @@ const PostDetail = ({ post }: PostProp) => {
   );
 };
 
-export default PostDetail;
+export default PostCard;

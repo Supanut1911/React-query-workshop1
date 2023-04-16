@@ -11,10 +11,15 @@ const fetchPost = async () => {
   return reponse.json();
 };
 
-const usePost = (): Post[] => {
+const usePost = () => {
   const fallback: Post[] = [];
-  const { data = fallback } = useQuery([queryKeys.post], fetchPost);
-  return data;
+  const {
+    data = fallback,
+    isError,
+    isLoading,
+  } = useQuery([queryKeys.post], fetchPost);
+  const posts = data as Post[];
+  return { posts, isError, isLoading };
 };
 
 export default usePost;
