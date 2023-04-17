@@ -17,7 +17,7 @@ const usePost = () => {
     data = fallback,
     isError,
     isLoading,
-  } = useQuery([queryKeys.post], fetchPost);
+  } = useQuery([queryKeys.posts], fetchPost, { staleTime: 5000 });
   const posts = data as Post[];
   return { posts, isError, isLoading };
 };

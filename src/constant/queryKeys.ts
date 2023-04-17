@@ -1,3 +1,3 @@
 export const queryKeys = {
-  post: 'POST',
+  posts: 'posts',
 };
