@@ -18,7 +18,7 @@ const PostView = () => {
   }
   if (isFetching) {
     console.log('isFetching call');
-    return <div>Fetching progress...</div>;
+    // return <div>Fetching progress...</div>;
   } else if (isError) return <div>Fetching false</div>;
 
   return (

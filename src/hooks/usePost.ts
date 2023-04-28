@@ -36,7 +36,7 @@ const usePost = (maxPostPage: number, currentPage: number) => {
     () => fetchPost(maxPostPage, currentPage),
     {
       staleTime: 2000,
-      // keepPreviousData: true,
+      keepPreviousData: true,
     }
   );
   const posts = data as Post[];
