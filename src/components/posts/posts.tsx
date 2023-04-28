@@ -8,9 +8,18 @@ const PostView = () => {
   const maxPostPage = 10;
   const [currentPage, setCurrentPage] = useState(1);
 
-  const { posts, isError, isLoading } = usePost(maxPostPage, currentPage);
-  if (isLoading) return <div>Loading ...</div>;
-  else if (isError) return <div>Fetching false</div>;
+  const { posts, isError, isLoading, isFetching } = usePost(
+    maxPostPage,
+    currentPage
+  );
+  if (isLoading) {
+    console.log('isloading call');
+    return <div>Loading ...</div>;
+  }
+  if (isFetching) {
+    console.log('isFetching call');
+    return <div>Fetching progress...</div>;
+  } else if (isError) return <div>Fetching false</div>;
 
   return (
     <div>

@@ -30,6 +30,7 @@ const usePost = (maxPostPage: number, currentPage: number) => {
     data = fallback,
     isError,
     isLoading,
+    isFetching,
   } = useQuery(
     [queryKeys.posts, currentPage],
     () => fetchPost(maxPostPage, currentPage),
@@ -39,7 +40,7 @@ const usePost = (maxPostPage: number, currentPage: number) => {
     }
   );
   const posts = data as Post[];
-  return { posts, isError, isLoading };
+  return { posts, isError, isLoading, isFetching };
 };
 
 export default usePost;
